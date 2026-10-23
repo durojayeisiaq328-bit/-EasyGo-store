@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EazyGo | Shop Easy. Pay Small Small.</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f9f6;
+      color: #222;
+    }
+    header {
+      background: #087443;
+      color: white;
+      padding: 22px 16px;
+      text-align: center;
+    }
+    header h1 { margin: 0; font-size: 32px; }
+    header p { margin-bottom: 0; }
+    nav {
+      background: white;
+      padding: 14px;
+      text-align: center;
+      border-bottom: 2px solid #d4af37;
+    }
+    nav a {
+      color: #087443;
+      text-decoration: none;
+      margin: 0 8px;
+      font-weight: bold;
+    }
+    .hero {
+      padding: 35px 18px;
+      text-align: center;
+      background: #e8f4ec;
+    }
+    .hero h2 { color: #087443; font-size: 28px; }
+    .hero p { line-height: 1.6; }
+    .button {
+      display: inline-block;
+      background: #d4af37;
+      color: #222;
+      padding: 12px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+    .section { padding: 24px 16px; max-width: 1000px; margin: auto; }
+    .section h2 { color: #087443; }
+    .categories, .products {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .category, .product {
+      background: white;
+      padding: 16px 10px;
+      border-radius: 10px;
+      text-align: center;
+      border: 1px solid #e2e7e2;
+    }
+    .category { font-weight: bold; }
+    .product .emoji { font-size: 36px; }
+    .product h3 { font-size: 16px; }
+    .price { color: #087443; font-weight: bold; }
+    .small { color: #666; font-size: 13px; }
+    .product button { margin-top: 8px; }
+    .info {
+      background: white;
+      padding: 18px;
+      border-left: 4px solid #d4af37;
+      line-height: 1.7;
+      border-radius: 6px;
+    }
+    footer {
+      background: #075c36;
+      color: white;
+      padding: 24px 16px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    @media (min-width: 650px) {
+      .categories { grid-template-columns: repeat(4, 1fr); }
+      .products { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🛍️ EazyGo</h1>
+    <p>Shop Easy. Pay Small Small.</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#categories">Categories</a>
+    <a href="#products">Products</a>
+    <a href="#plans">Payment Plans</a>
+  </nav>
+
+  <section class="hero" id="home">
+    <h2>Your Favourite Products, Made Easier!</h2>
+    <p>Shop smartphones, laptops, electronics, fashion, home appliances and much more.</p>
+    <p>Choose a payment plan that works for you.</p>
+    <a class="button" href="#products">Explore Products</a>
+  </section>
+
+  <section class="section" id="categories">
+    <h2>Shop by Category</h2>
+    <div class="categories">
+      <div class="category">📱 Smartphones</div>
+      <div class="category">💻 Laptops</div>
+      <div class="category">📺 Electronics</div>
+      <div class="category">🏠 Home & Kitchen</div>
+      <div class="category">👗 Fashion</div>
+      <div class="category">👟 Shoes & Bags</div>
+      <div class="category">💄 Beauty</div>
+      <div class="category">🪑 Furniture</div>
+    </div>
+  </section>
+
+  <section class="section" id="products">
+    <h2>Featured Products</h2>
+    <p class="small">Sample products and prices for demonstration. Replace these with your real stock and prices before selling.</p>
+    <div class="products">
+      <div class="product">
+        <div class="emoji">📱</div>
+        <h3>Smartphone</h3>
+        <p class="price">₦300,000</p>
+        <p class="small">Sample price</p>
+        <button class="button" onclick="calculate(300000)">View Payment Plan</button>
+      </div>
+      <div class="product">
+        <div class="emoji">💻</div>
+        <h3>Laptop</h3>
+        <p class="price">₦600,000</p>
+        <p class="small">Sample price</p>
+        <button class="button" onclick="calculate(600000)">View Payment Plan</button>
+      </div>
+      <div class="product">
+        <div class="emoji">📺</div>
+        <h3>Television</h3>
+        <p class="price">₦450,000</p>
+        <p class="small">Sample price</p>
+        <button class="button" onclick="calculate(450000)">View Payment Plan</button>
+      </div>
+      <div class="product">
+        <div class="emoji">🧊</div>
+        <h3>Refrigerator</h3>
+        <p class="price">₦500,000</p>
+        <p class="small">Sample price</p>
+        <button class="button" onclick="calculate(500000)">View Payment Plan</button>
+      </div>
+      <div class="product">
+        <div class="emoji">👟</div>
+        <h3>Shoes</h3>
+        <p class="price">₦50,000</p>
+        <p class="small">Sample price</p>
+        <button class="button" onclick="calculate(50000)">View Payment Plan</button>
+      </div>
+      <div class="product">
+        <div class="emoji">👜</div>
+        <h3>Fashion Bag</h3>
+        <p class="price">₦35,000</p>
+        <p class="small">Sample price</p>
+        <button class="button" onclick="calculate(35000)">View Payment Plan</button>
+      </div>
+    </div>
+    <div id="result" class="info" style="display:none; margin-top:20px;"></div>
+  </section>
+
+  <section class="section" id="plans">
+    <h2>Pay Small Small</h2>
+    <div class="info">
+      <p>Choose a payment period of 2, 3, 6, 9 or 12 months.</p>
+      <p>The demonstration calculator adds an installment fee of 8% per year, prorated for the selected period. Delivery and optional product protection are extra.</p>
+      <p><strong>Important:</strong> This is only a sample calculator. It does not collect payments, approve credit or create an order.</p>
+    </div>
+  </section>
+
+  <footer>
+    <h3>EazyGo — Easy Shopping for Everyone</h3>
+    <p>Shop Easy. Pay Small Small.</p>
+    <p>Serving customers across Nigeria 🇳🇬</p>
+    <p class="small" style="color:#eee;">Contact details and real product listings will be added later.</p>
+  </footer>
+
+  <script>
+    function calculate(price) {
+      const months = [2, 3, 6, 9, 12];
+      let html = '<h3>Payment options for ₦' + price.toLocaleString('en-NG') + '</h3>';
+      html += '<p>Sample installment estimates. Delivery and optional protection are not included.</p>';
+      html += '<label for="months">Choose your plan:</label> ';
+      html += '<select id="months" onchange="showPlan(' + price + ')">';
+      months.forEach(function(m) {
+        html += '<option value="' + m + '">' + m + ' months</option>';
+      });
+      html += '</select><div id="planResult"></div>';
+      document.getElementById('result').innerHTML = html;
+      document.getElementById('result').style.display = 'block';
+      showPlan(price);
+      document.getElementById('result').scrollIntoView({behavior:'smooth'});
+    }
+
+    function showPlan(price) {
+      const months = Number(document.getElementById('months').value);
+      const fee = price * 0.08 * (months / 12);
+      const total = price + fee;
+      const monthly = total / months;
+      document.getElementById('planResult').innerHTML =
+        '<p>Product price: ₦' + price.toLocaleString('en-NG') + '</p>' +
+        '<p>Sample installment fee: ₦' + fee.toLocaleString('en-NG', {maximumFractionDigits:2}) + '</p>' +
+        '<p><strong>Product + installment fee: ₦' + total.toLocaleString('en-NG', {maximumFractionDigits:2}) + '</strong></p>' +
+        '<p>Estimated monthly payment: ₦' + monthly.toLocaleString('en-NG', {maximumFractionDigits:2}) + '</p>';
+    }
+  </script>
+</body>
+</html>
