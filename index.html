@@ -1,223 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EazyGo | Shop Easy. Pay Small Small.</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f7f9f6;
-      color: #222;
-    }
-    header {
-      background: #087443;
-      color: white;
-      padding: 22px 16px;
-      text-align: center;
-    }
-    header h1 { margin: 0; font-size: 32px; }
-    header p { margin-bottom: 0; }
-    nav {
-      background: white;
-      padding: 14px;
-      text-align: center;
-      border-bottom: 2px solid #d4af37;
-    }
-    nav a {
-      color: #087443;
-      text-decoration: none;
-      margin: 0 8px;
-      font-weight: bold;
-    }
-    .hero {
-      padding: 35px 18px;
-      text-align: center;
-      background: #e8f4ec;
-    }
-    .hero h2 { color: #087443; font-size: 28px; }
-    .hero p { line-height: 1.6; }
-    .button {
-      display: inline-block;
-      background: #d4af37;
-      color: #222;
-      padding: 12px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-    }
-    .section { padding: 24px 16px; max-width: 1000px; margin: auto; }
-    .section h2 { color: #087443; }
-    .categories, .products {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-    }
-    .category, .product {
-      background: white;
-      padding: 16px 10px;
-      border-radius: 10px;
-      text-align: center;
-      border: 1px solid #e2e7e2;
-    }
-    .category { font-weight: bold; }
-    .product .emoji { font-size: 36px; }
-    .product h3 { font-size: 16px; }
-    .price { color: #087443; font-weight: bold; }
-    .small { color: #666; font-size: 13px; }
-    .product button { margin-top: 8px; }
-    .info {
-      background: white;
-      padding: 18px;
-      border-left: 4px solid #d4af37;
-      line-height: 1.7;
-      border-radius: 6px;
-    }
-    footer {
-      background: #075c36;
-      color: white;
-      padding: 24px 16px;
-      text-align: center;
-      margin-top: 20px;
-    }
-    @media (min-width: 650px) {
-      .categories { grid-template-columns: repeat(4, 1fr); }
-      .products { grid-template-columns: repeat(3, 1fr); }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>🛍️ EazyGo</h1>
-    <p>Shop Easy. Pay Small Small.</p>
-  </header>
-
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#categories">Categories</a>
-    <a href="#products">Products</a>
-    <a href="#plans">Payment Plans</a>
-  </nav>
-
-  <section class="hero" id="home">
-    <h2>Your Favourite Products, Made Easier!</h2>
-    <p>Shop smartphones, laptops, electronics, fashion, home appliances and much more.</p>
-    <p>Choose a payment plan that works for you.</p>
-    <a class="button" href="#products">Explore Products</a>
-  </section>
-
-  <section class="section" id="categories">
-    <h2>Shop by Category</h2>
-    <div class="categories">
-      <div class="category">📱 Smartphones</div>
-      <div class="category">💻 Laptops</div>
-      <div class="category">📺 Electronics</div>
-      <div class="category">🏠 Home & Kitchen</div>
-      <div class="category">👗 Fashion</div>
-      <div class="category">👟 Shoes & Bags</div>
-      <div class="category">💄 Beauty</div>
-      <div class="category">🪑 Furniture</div>
-    </div>
-  </section>
-
-  <section class="section" id="products">
-    <h2>Featured Products</h2>
-    <p class="small">Sample products and prices for demonstration. Replace these with your real stock and prices before selling.</p>
-    <div class="products">
-      <div class="product">
-        <div class="emoji">📱</div>
-        <h3>Smartphone</h3>
-        <p class="price">₦300,000</p>
-        <p class="small">Sample price</p>
-        <button class="button" onclick="calculate(300000)">View Payment Plan</button>
-      </div>
-      <div class="product">
-        <div class="emoji">💻</div>
-        <h3>Laptop</h3>
-        <p class="price">₦600,000</p>
-        <p class="small">Sample price</p>
-        <button class="button" onclick="calculate(600000)">View Payment Plan</button>
-      </div>
-      <div class="product">
-        <div class="emoji">📺</div>
-        <h3>Television</h3>
-        <p class="price">₦450,000</p>
-        <p class="small">Sample price</p>
-        <button class="button" onclick="calculate(450000)">View Payment Plan</button>
-      </div>
-      <div class="product">
-        <div class="emoji">🧊</div>
-        <h3>Refrigerator</h3>
-        <p class="price">₦500,000</p>
-        <p class="small">Sample price</p>
-        <button class="button" onclick="calculate(500000)">View Payment Plan</button>
-      </div>
-      <div class="product">
-        <div class="emoji">👟</div>
-        <h3>Shoes</h3>
-        <p class="price">₦50,000</p>
-        <p class="small">Sample price</p>
-        <button class="button" onclick="calculate(50000)">View Payment Plan</button>
-      </div>
-      <div class="product">
-        <div class="emoji">👜</div>
-        <h3>Fashion Bag</h3>
-        <p class="price">₦35,000</p>
-        <p class="small">Sample price</p>
-        <button class="button" onclick="calculate(35000)">View Payment Plan</button>
-      </div>
-    </div>
-    <div id="result" class="info" style="display:none; margin-top:20px;"></div>
-  </section>
-
-  <section class="section" id="plans">
-    <h2>Pay Small Small</h2>
-    <div class="info">
-      <p>Choose a payment period of 2, 3, 6, 9 or 12 months.</p>
-      <p>The demonstration calculator adds an installment fee of 8% per year, prorated for the selected period. Delivery and optional product protection are extra.</p>
-      <p><strong>Important:</strong> This is only a sample calculator. It does not collect payments, approve credit or create an order.</p>
-    </div>
-  </section>
-
-  <footer>
-    <h3>EazyGo — Easy Shopping for Everyone</h3>
-    <p>Shop Easy. Pay Small Small.</p>
-    <p>Serving customers across Nigeria 🇳🇬</p>
-    <p class="small" style="color:#eee;">Contact details and real product listings will be added later.</p>
-  </footer>
-
-  <script>
-    function calculate(price) {
-      const months = [2, 3, 6, 9, 12];
-      let html = '<h3>Payment options for ₦' + price.toLocaleString('en-NG') + '</h3>';
-      html += '<p>Sample installment estimates. Delivery and optional protection are not included.</p>';
-      html += '<label for="months">Choose your plan:</label> ';
-      html += '<select id="months" onchange="showPlan(' + price + ')">';
-      months.forEach(function(m) {
-        html += '<option value="' + m + '">' + m + ' months</option>';
-      });
-      html += '</select><div id="planResult"></div>';
-      document.getElementById('result').innerHTML = html;
-      document.getElementById('result').style.display = 'block';
-      showPlan(price);
-      document.getElementById('result').scrollIntoView({behavior:'smooth'});
-    }
-
-    function showPlan(price) {
-      const months = Number(document.getElementById('months').value);
-      const fee = price * 0.08 * (months / 12);
-      const total = price + fee;
-      const monthly = total / months;
-      document.getElementById('planResult').innerHTML =
-        '<p>Product price: ₦' + price.toLocaleString('en-NG') + '</p>' +
-        '<p>Sample installment fee: ₦' + fee.toLocaleString('en-NG', {maximumFractionDigits:2}) + '</p>' +
-        '<p><strong>Product + installment fee: ₦' + total.toLocaleString('en-NG', {maximumFractionDigits:2}) + '</strong></p>' +
-        '<p>Estimated monthly payment: ₦' + monthly.toLocaleString('en-NG', {maximumFractionDigits:2}) + '</p>';
-    }
-  </script>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EazyGo | Shop Easy</title><style>
+:root{--g:#13833b;--d:#123524;--gold:#f3c64e;--bg:#f7fbf7}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:#1d2a22;background:var(--bg);line-height:1.5}
+header{background:var(--g);color:white;padding:18px}.wrap{max-width:1050px;margin:auto;padding:0 16px}
+.brand{font-size:1.65rem;font-weight:bold;margin:0}.slogan{color:#fff2bd;margin:2px 0 12px}
+nav{display:flex;gap:16px;flex-wrap:wrap}nav a{color:white;text-decoration:none;font-weight:bold}
+.hero{padding:42px 0;background:linear-gradient(135deg,#e8f7ec,#fff8df)}h1{color:var(--d)}
+.button{display:inline-block;border-radius:9px;background:var(--g);color:white;text-decoration:none;padding:11px 15px;font-weight:bold;margin:5px 6px 5px 0}.gold{background:var(--gold);color:#203322}.wa{background:#128c4a}
+section{padding:28px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.card{background:white;border:1px solid #e3eadf;border-radius:14px;padding:17px;box-shadow:0 3px 12px #183b1b0b}
+.emoji{font-size:2.3rem}.price{font-size:1.3rem;font-weight:bold;color:var(--g)}.note{font-size:.9rem;color:#58675d}
+.pill{display:inline-block;background:#e5f5e9;color:#145c2c;padding:5px 9px;border-radius:20px;font-size:.85rem}
+input,select{font-size:1rem;padding:10px;border:1px solid #c8d5ca;border-radius:8px;width:100%;margin:6px 0 12px}
+footer{background:var(--d);color:white;padding:24px 0;margin-top:20px}footer a{color:#ffe18a}
+</style></head><body>
+<header><div class="wrap"><p class="brand">EazyGo</p><p class="slogan">Shop Easy. Pay Small Small.</p><nav><a href="index.html">Home</a><a href="products.html">Products</a><a href="#categories">Categories</a><a href="#plans">Payment Plans</a><a href="https://wa.me/2349162884848">Contact</a></nav></div></header>
+<main><div class="hero"><div class="wrap"><span class="pill">Easy Go Solution · Nigeria</span><h1>Your Favourite Products, Made Easier!</h1><p>Shop smartphones, laptops, electronics, fashion, home appliances and more. Choose a payment option that works for you.</p><a class="button gold" href="products.html">Explore Products</a><a class="button wa" href="https://wa.me/2349162884848" target="_blank" rel="noopener">Order on WhatsApp</a></div></div>
+<section id="categories"><div class="wrap"><h2>Shop by Category</h2><div class="grid"><div class="card">📱 Smartphones</div><div class="card">💻 Laptops</div><div class="card">📺 Electronics</div><div class="card">🏠 Home &amp; Kitchen</div><div class="card">👗 Fashion</div><div class="card">👟 Shoes &amp; Bags</div><div class="card">💄 Beauty</div><div class="card">🪑 Furniture</div></div></div></section>
+<section><div class="wrap"><h2>Featured Products</h2><p class="note">Demonstration listings. Confirm stock and prices before accepting orders.</p><div class="grid">
+<div class="card"><div class="emoji">🔥</div><h3>2-Burner Gas Cooker</h3><p class="price">₦20,000</p><a class="button" href="products.html">View Products</a><a class="button wa" href="https://wa.me/2349162884848?text=Hello%20EazyGo%2C%20I%20am%20interested%20in%20the%202-burner%20gas%20cooker." target="_blank" rel="noopener">Ask on WhatsApp</a></div>
+<div class="card"><div class="emoji">📱</div><h3>Smartphone</h3><p class="price">₦300,000</p><a class="button" href="products.html">View Products</a></div><div class="card"><div class="emoji">💻</div><h3>Laptop</h3><p class="price">₦600,000</p><a class="button" href="products.html">View Products</a></div><div class="card"><div class="emoji">📺</div><h3>Smart TV</h3><p class="price">₦450,000</p><a class="button" href="products.html">View Products</a></div></div></div></section>
+<section id="plans"><div class="wrap"><h2>Pay Small Small</h2><p>Possible plan periods: 2, 3, 6, 9 or 12 months. Confirm eligibility, fees, delivery timing and payment terms with EazyGo before purchase.</p><div class="card"><p><strong>Example only:</strong> delivery and optional product protection may cost extra. This website does not collect payments, approve credit or create orders.</p><a class="button wa" href="https://wa.me/2349162884848?text=Hello%20EazyGo%2C%20please%20tell%20me%20about%20your%20payment%20plans." target="_blank" rel="noopener">Ask About Payment Plans</a></div></div></section>
+<section><div class="wrap card"><h2>Need help?</h2><p>Message EazyGo to ask about product availability, price and delivery.</p><a class="button wa" href="https://wa.me/2349162884848" target="_blank" rel="noopener">Contact EazyGo on WhatsApp</a></div></section></main>
+<footer><div class="wrap"><strong>EazyGo — Easy Go Solution</strong><p>Shop Easy. Pay Small Small. 🇳🇬</p><a href="https://wa.me/2349162884848">WhatsApp customer enquiries</a><p class="note">Confirm product availability and prices before accepting orders.</p></div></footer></body></html>

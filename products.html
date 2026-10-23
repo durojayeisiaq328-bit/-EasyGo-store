@@ -1,127 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>EazyGo | Shop Products</title>
-<style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f5f7f5;color:#222}
-header{background:#087443;color:white;padding:20px;text-align:center}
-header h1{margin:0}
-nav{background:white;padding:15px;text-align:center}
-nav a{color:#087443;text-decoration:none;font-weight:bold;margin:8px}
-main{max-width:1100px;margin:auto;padding:18px}
-h2{color:#087443}
-input,select{width:100%;padding:13px;margin:8px 0;border:1px solid #ccc;border-radius:7px;font-size:16px}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.card{background:white;border-radius:10px;padding:12px;text-align:center;box-shadow:0 2px 6px #0001}
-.card img{width:100%;height:150px;object-fit:contain}
-.card h3{font-size:16px;min-height:38px}
-.price{color:#087443;font-weight:bold}
-button{background:#d4af37;color:#222;border:0;border-radius:7px;padding:11px;cursor:pointer;font-weight:bold}
-.card button{width:100%}
-#result{background:#e8f4ec;padding:15px;border-radius:8px;margin-top:20px;display:none}
-footer{background:#075c36;color:white;text-align:center;padding:20px;margin-top:25px}
-@media(min-width:700px){.grid{grid-template-columns:repeat(4,1fr)}}
-</style>
-</head>
-<body>
-
-<header>
-<h1>🛍️ EazyGo</h1>
-<p>Shop Easy. Pay Small Small.</p>
-</header>
-
-<nav>
-<a href="index.html">Home</a>
-<a href="products.html">Products</a>
-</nav>
-
-<main>
-<h2>Explore Products</h2>
-<p>Find your favourite products and explore flexible payment plans.</p>
-
-<input id="search" placeholder="🔍 Search products..." oninput="render()">
-
-<select id="category" onchange="render()">
-<option value="all">All Categories</option>
-<option value="Phones">Smartphones</option>
-<option value="Computers">Computers</option>
-<option value="Electronics">Electronics</option>
-<option value="Appliances">Home Appliances</option>
-<option value="Fashion">Fashion</option>
-</select>
-
-<p><small>These are demonstration listings, not confirmed available stock. Images are illustrative.</small></p>
-
-<div class="grid" id="products"></div>
-
-<div id="result"></div>
-</main>
-
-<footer>
-<p>EazyGo — Shop Easy. Pay Small Small.</p>
-<p>Serving customers across Nigeria 🇳🇬</p>
-</footer>
-
-<script>
-const items=[
-{name:"Smartphone",price:300000,cat:"Phones",img:"https://placehold.co/300x220/e8f4ec/087443?text=Smartphone"},
-{name:"Laptop",price:600000,cat:"Computers",img:"https://placehold.co/300x220/e8f4ec/087443?text=Laptop"},
-{name:"Smart TV",price:450000,cat:"Electronics",img:"https://placehold.co/300x220/e8f4ec/087443?text=Smart+TV"},
-{name:"Refrigerator",price:500000,cat:"Appliances",img:"https://placehold.co/300x220/e8f4ec/087443?text=Refrigerator"},
-{name:"Sneakers",price:50000,cat:"Fashion",img:"https://placehold.co/300x220/e8f4ec/087443?text=Sneakers"},
-{name:"Fashion Bag",price:35000,cat:"Fashion",img:"https://placehold.co/300x220/e8f4ec/087443?text=Fashion+Bag"},
-{name:"Tablet",price:220000,cat:"Computers",img:"https://placehold.co/300x220/e8f4ec/087443?text=Tablet"},
-{name:"Washing Machine",price:380000,cat:"Appliances",img:"https://placehold.co/300x220/e8f4ec/087443?text=Washing+Machine"}
-];
-
-function money(n){
-return "₦"+n.toLocaleString("en-NG",{maximumFractionDigits:2});
-}
-
-function render(){
-const search=document.getElementById("search").value.toLowerCase();
-const category=document.getElementById("category").value;
-const filtered=items.filter(p=>
-p.name.toLowerCase().includes(search)&&
-(category==="all"||p.cat===category)
-);
-document.getElementById("products").innerHTML=filtered.map(p=>{
-const i=items.indexOf(p);
-return `<div class="card">
-<img src="${p.img}" alt="${p.name}" loading="lazy">
-<h3>${p.name}</h3>
-<p class="price">${money(p.price)}</p>
-<button onclick="plan(${i})">View Payment Plan</button>
-</div>`;
-}).join("")||"<p>No products found.</p>";
-}
-
-function plan(i){
-const p=items[i];
-const months=Number(prompt("Enter payment months: 2, 3, 6, 9 or 12","6"));
-if(![2,3,6,9,12].includes(months)){
-alert("Please choose 2, 3, 6, 9 or 12 months.");
-return;
-}
-const fee=p.price*0.08*(months/12);
-const total=p.price+fee;
-const monthly=total/months;
-const box=document.getElementById("result");
-box.style.display="block";
-box.innerHTML=`
-<h3>${p.name} — ${months}-Month Plan</h3>
-<p>Product price: ${money(p.price)}</p>
-<p>Installment fee: ${money(fee)}</p>
-<p><strong>Total estimate: ${money(total)}</strong></p>
-<p>Estimated monthly payment: ${money(monthly)}</p>
-<p><small>Delivery and optional product protection are excluded. This is a demonstration, not a payment or credit offer.</small></p>`;
-box.scrollIntoView({behavior:"smooth"});
-}
-
-render();
-</script>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Products | EazyGo</title><style>
+:root{--g:#13833b;--d:#123524;--gold:#f3c64e;--bg:#f7fbf7}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:#1d2a22;background:var(--bg);line-height:1.5}
+header{background:var(--g);color:white;padding:18px}.wrap{max-width:1050px;margin:auto;padding:0 16px}
+.brand{font-size:1.65rem;font-weight:bold;margin:0}.slogan{color:#fff2bd;margin:2px 0 12px}
+nav{display:flex;gap:16px;flex-wrap:wrap}nav a{color:white;text-decoration:none;font-weight:bold}
+.hero{padding:42px 0;background:linear-gradient(135deg,#e8f7ec,#fff8df)}h1{color:var(--d)}
+.button{display:inline-block;border-radius:9px;background:var(--g);color:white;text-decoration:none;padding:11px 15px;font-weight:bold;margin:5px 6px 5px 0}.gold{background:var(--gold);color:#203322}.wa{background:#128c4a}
+section{padding:28px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.card{background:white;border:1px solid #e3eadf;border-radius:14px;padding:17px;box-shadow:0 3px 12px #183b1b0b}
+.emoji{font-size:2.3rem}.price{font-size:1.3rem;font-weight:bold;color:var(--g)}.note{font-size:.9rem;color:#58675d}
+.pill{display:inline-block;background:#e5f5e9;color:#145c2c;padding:5px 9px;border-radius:20px;font-size:.85rem}
+input,select{font-size:1rem;padding:10px;border:1px solid #c8d5ca;border-radius:8px;width:100%;margin:6px 0 12px}
+footer{background:var(--d);color:white;padding:24px 0;margin-top:20px}footer a{color:#ffe18a}
+.toolbar{max-width:420px;margin-bottom:18px}.product h2{font-size:1.2rem}</style></head><body>
+<header><div class="wrap"><p class="brand">EazyGo</p><p class="slogan">Shop Easy. Pay Small Small.</p><nav><a href="index.html">Home</a><a href="products.html">Products</a><a href="https://wa.me/2349162884848" target="_blank" rel="noopener">Contact on WhatsApp</a></nav></div></header>
+<main><section><div class="wrap"><h1>Explore Products</h1><p>Find products and contact EazyGo to check availability, price and delivery.</p><div class="toolbar"><label for="search">Search products</label><input id="search" type="search" placeholder="Try gas cooker, laptop, shoes..."><label for="category">Filter by category</label><select id="category"><option value="all">All categories</option><option value="home & kitchen">Home &amp; Kitchen</option><option value="electronics">Electronics</option><option value="fashion">Fashion</option></select></div><p class="note">Demonstration listings, not confirmed available stock. Emoji are illustrative placeholders.</p><div class="grid" id="catalogue"><article class="card product" data-cat="home & kitchen"><div class="emoji">🔥</div><span class="pill">Home & Kitchen</span><h2>2-Burner Gas Cooker</h2><p class="price">₦20,000</p><p class="note">Sample listing — confirm availability before ordering.</p><a class="button wa" href="https://wa.me/2349162884848?text=Hello%20EazyGo%2C%20I%20am%20interested%20in%20the%202-Burner%20Gas%20Cooker." target="_blank" rel="noopener">Ask / Order on WhatsApp</a></article><article class="card product" data-cat="electronics"><div class="emoji">📱</div><span class="pill">Electronics</span><h2>Smartphone</h2><p class="price">₦300,000</p><p class="note">Sample listing — confirm availability before ordering.</p><a class="button wa" href="https://wa.me/2349162884848?text=Hello%20EazyGo%2C%20I%20am%20interested%20in%20the%20Smartphone." target="_blank" rel="noopener">Ask / Order on WhatsApp</a></article><article class="card product" data-cat="electronics"><div class="emoji">💻</div><span class="pill">Electronics</span><h2>Laptop</h2><p class="price">₦600,000</p><p class="note">Sample listing — confirm availability before ordering.</p><a class="button wa" href="https://wa.me/2349162884848?text=Hello%20EazyGo%2C%20I%20am%20interested%20in%20the%20Laptop." target="_blank" rel="noopener">Ask / Order on WhatsApp</a></article><article class="card product" data-cat="electronics"><div class="emoji">📺</div><span class="pill">Electronics</span><h2>Smart TV</h2><p class="price">₦450,000</p><p class="note">Sample listing — confirm availability before ordering.</p><a class="button wa" href="https://wa.me/2349162884848?text=Hello%20EazyGo%2C%20I%20am%20interested%20in%20the%20Smart%20TV." target="_blank" rel="noopener">Ask / Order on WhatsApp</a></article><article class="card product" data-cat="home & kitchen"><div class="emoji">🧊</div><span class="pill">Home & Kitchen</span><h2>Refrigerator</h2><p class="price">₦500,000</p><p class="note">Sample listing — confirm availability before ordering.</p><a class="button wa" href="https://wa.me/2349162884848?text=Hello%20EazyGo%2C%20I%20am%20interested%20in%20the%20Refrigerator." target="_blank" rel="noopener">Ask / Order on WhatsApp</a></article><article class="card product" data-cat="fashion"><div class="emoji">👟</div><span class="pill">Fashion</span><h2>Sneakers</h2><p class="price">₦50,000</p><p class="note">Sample listing — confirm availability before ordering.</p><a class="button wa" href="https://wa.me/2349162884848?text=Hello%20EazyGo%2C%20I%20am%20interested%20in%20the%20Sneakers." target="_blank" rel="noopener">Ask / Order on WhatsApp</a></article><article class="card product" data-cat="fashion"><div class="emoji">👜</div><span class="pill">Fashion</span><h2>Fashion Bag</h2><p class="price">₦35,000</p><p class="note">Sample listing — confirm availability before ordering.</p><a class="button wa" href="https://wa.me/2349162884848?text=Hello%20EazyGo%2C%20I%20am%20interested%20in%20the%20Fashion%20Bag." target="_blank" rel="noopener">Ask / Order on WhatsApp</a></article><article class="card product" data-cat="electronics"><div class="emoji">📱</div><span class="pill">Electronics</span><h2>Tablet</h2><p class="price">₦220,000</p><p class="note">Sample listing — confirm availability before ordering.</p><a class="button wa" href="https://wa.me/2349162884848?text=Hello%20EazyGo%2C%20I%20am%20interested%20in%20the%20Tablet." target="_blank" rel="noopener">Ask / Order on WhatsApp</a></article><article class="card product" data-cat="home & kitchen"><div class="emoji">🧺</div><span class="pill">Home & Kitchen</span><h2>Washing Machine</h2><p class="price">₦380,000</p><p class="note">Sample listing — confirm availability before ordering.</p><a class="button wa" href="https://wa.me/2349162884848?text=Hello%20EazyGo%2C%20I%20am%20interested%20in%20the%20Washing%20Machine." target="_blank" rel="noopener">Ask / Order on WhatsApp</a></article></div><p id="empty" hidden>No matching products found.</p><div class="card" style="margin-top:22px"><h2>Need help choosing?</h2><a class="button wa" href="https://wa.me/2349162884848" target="_blank" rel="noopener">Chat with EazyGo on WhatsApp</a></div></div></section></main>
+<footer><div class="wrap"><strong>EazyGo — Easy Go Solution</strong><p>Shop Easy. Pay Small Small. 🇳🇬</p><a href="https://wa.me/2349162884848">WhatsApp customer enquiries</a></div></footer>
+<script>const s=document.getElementById('search'),c=document.getElementById('category');function filt(){let n=0;document.querySelectorAll('.product').forEach(p=>{let ok=p.textContent.toLowerCase().includes(s.value.toLowerCase())&&(c.value==='all'||p.dataset.cat===c.value);p.hidden=!ok;if(ok)n++;});document.getElementById('empty').hidden=n>0;}s.addEventListener('input',filt);c.addEventListener('change',filt);</script></body></html>
