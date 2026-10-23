@@ -1,24 +1,89 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EazyGo | Shop Easy</title><style>
-:root{--g:#13833b;--d:#123524;--gold:#f3c64e;--bg:#f7fbf7}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:#1d2a22;background:var(--bg);line-height:1.5}
-header{background:var(--g);color:white;padding:18px}.wrap{max-width:1050px;margin:auto;padding:0 16px}
-.brand{font-size:1.65rem;font-weight:bold;margin:0}.slogan{color:#fff2bd;margin:2px 0 12px}
-nav{display:flex;gap:16px;flex-wrap:wrap}nav a{color:white;text-decoration:none;font-weight:bold}
-.hero{padding:42px 0;background:linear-gradient(135deg,#e8f7ec,#fff8df)}h1{color:var(--d)}
-.button{display:inline-block;border-radius:9px;background:var(--g);color:white;text-decoration:none;padding:11px 15px;font-weight:bold;margin:5px 6px 5px 0}.gold{background:var(--gold);color:#203322}.wa{background:#128c4a}
-section{padding:28px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
-.card{background:white;border:1px solid #e3eadf;border-radius:14px;padding:17px;box-shadow:0 3px 12px #183b1b0b}
-.emoji{font-size:2.3rem}.price{font-size:1.3rem;font-weight:bold;color:var(--g)}.note{font-size:.9rem;color:#58675d}
-.pill{display:inline-block;background:#e5f5e9;color:#145c2c;padding:5px 9px;border-radius:20px;font-size:.85rem}
-input,select{font-size:1rem;padding:10px;border:1px solid #c8d5ca;border-radius:8px;width:100%;margin:6px 0 12px}
-footer{background:var(--d);color:white;padding:24px 0;margin-top:20px}footer a{color:#ffe18a}
-</style></head><body>
-<header><div class="wrap"><p class="brand">EazyGo</p><p class="slogan">Shop Easy. Pay Small Small.</p><nav><a href="index.html">Home</a><a href="products.html">Products</a><a href="#categories">Categories</a><a href="#plans">Payment Plans</a><a href="https://wa.me/2349162884848">Contact</a></nav></div></header>
-<main><div class="hero"><div class="wrap"><span class="pill">Easy Go Solution · Nigeria</span><h1>Your Favourite Products, Made Easier!</h1><p>Shop smartphones, laptops, electronics, fashion, home appliances and more. Choose a payment option that works for you.</p><a class="button gold" href="products.html">Explore Products</a><a class="button wa" href="https://wa.me/2349162884848" target="_blank" rel="noopener">Order on WhatsApp</a></div></div>
-<section id="categories"><div class="wrap"><h2>Shop by Category</h2><div class="grid"><div class="card">📱 Smartphones</div><div class="card">💻 Laptops</div><div class="card">📺 Electronics</div><div class="card">🏠 Home &amp; Kitchen</div><div class="card">👗 Fashion</div><div class="card">👟 Shoes &amp; Bags</div><div class="card">💄 Beauty</div><div class="card">🪑 Furniture</div></div></div></section>
-<section><div class="wrap"><h2>Featured Products</h2><p class="note">Demonstration listings. Confirm stock and prices before accepting orders.</p><div class="grid">
-<div class="card"><div class="emoji">🔥</div><h3>2-Burner Gas Cooker</h3><p class="price">₦20,000</p><a class="button" href="products.html">View Products</a><a class="button wa" href="https://wa.me/2349162884848?text=Hello%20EazyGo%2C%20I%20am%20interested%20in%20the%202-burner%20gas%20cooker." target="_blank" rel="noopener">Ask on WhatsApp</a></div>
-<div class="card"><div class="emoji">📱</div><h3>Smartphone</h3><p class="price">₦300,000</p><a class="button" href="products.html">View Products</a></div><div class="card"><div class="emoji">💻</div><h3>Laptop</h3><p class="price">₦600,000</p><a class="button" href="products.html">View Products</a></div><div class="card"><div class="emoji">📺</div><h3>Smart TV</h3><p class="price">₦450,000</p><a class="button" href="products.html">View Products</a></div></div></div></section>
-<section id="plans"><div class="wrap"><h2>Pay Small Small</h2><p>Possible plan periods: 2, 3, 6, 9 or 12 months. Confirm eligibility, fees, delivery timing and payment terms with EazyGo before purchase.</p><div class="card"><p><strong>Example only:</strong> delivery and optional product protection may cost extra. This website does not collect payments, approve credit or create orders.</p><a class="button wa" href="https://wa.me/2349162884848?text=Hello%20EazyGo%2C%20please%20tell%20me%20about%20your%20payment%20plans." target="_blank" rel="noopener">Ask About Payment Plans</a></div></div></section>
-<section><div class="wrap card"><h2>Need help?</h2><p>Message EazyGo to ask about product availability, price and delivery.</p><a class="button wa" href="https://wa.me/2349162884848" target="_blank" rel="noopener">Contact EazyGo on WhatsApp</a></div></section></main>
-<footer><div class="wrap"><strong>EazyGo — Easy Go Solution</strong><p>Shop Easy. Pay Small Small. 🇳🇬</p><a href="https://wa.me/2349162884848">WhatsApp customer enquiries</a><p class="note">Confirm product availability and prices before accepting orders.</p></div></footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0d4b35">
+<title>EazyGo Solution | Shop Easy. Pay Small Small.</title>
+<style>
+:root{--green:#0d4b35;--green2:#176448;--gold:#d6ad45;--cream:#fffaf0;--ink:#17251e;--muted:#66736b;--line:#e4e9e4;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#f6f8f5}a{color:inherit;text-decoration:none}button,input,select{font:inherit}.topbar{background:#083b2a;color:#fff;text-align:center;padding:8px 12px;font-size:.82rem}.header{background:var(--green);color:#fff;padding:16px max(16px,calc((100% - 1180px)/2));display:flex;gap:18px;align-items:center;flex-wrap:wrap}.brand{min-width:185px}.brand-name{font-weight:900;font-size:1.35rem;letter-spacing:.2px}.brand-name span{color:var(--gold)}.tagline{font-size:.72rem;color:#e8eee9;margin-top:4px}.search{flex:1;display:flex;min-width:220px;background:#fff;border-radius:9px;overflow:hidden}.search input{border:0;outline:0;padding:13px;width:100%;min-width:0;color:var(--ink)}.search button{border:0;background:var(--gold);padding:0 17px;font-weight:800;cursor:pointer;color:#173425}.cart-link{font-weight:700;white-space:nowrap}.nav{background:#176448;color:white;display:flex;gap:22px;padding:11px max(16px,calc((100% - 1180px)/2));overflow:auto;white-space:nowrap;font-size:.92rem}.nav a:hover{text-decoration:underline}.wrap{max-width:1180px;margin:auto;padding:24px 16px}.hero{background:linear-gradient(120deg,#0d4b35,#176448);border-radius:18px;padding:36px 30px;color:white;display:grid;grid-template-columns:1.4fr .8fr;gap:24px;align-items:center;overflow:hidden}.eyebrow{color:#f2d47c;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;font-size:.76rem}.hero h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.07;margin:12px 0}.hero p{color:#e1eee6;line-height:1.6;max-width:570px}.hero .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;padding:12px 17px;border-radius:9px;border:0;cursor:pointer;font-weight:800}.btn-gold{background:var(--gold);color:#173425}.btn-light{background:white;color:var(--green)}.hero-art{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:24px;text-align:center}.hero-art .big{font-size:5rem}.hero-art strong{display:block;font-size:1.15rem;margin-top:8px}.hero-art small{color:#e2eee6;display:block;margin-top:6px}.notice{background:#fff5d8;border:1px solid #ead28a;color:#634d0e;padding:12px 15px;border-radius:10px;margin:18px 0;font-size:.9rem;line-height:1.5}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:30px 0 16px}.section-head h2{margin:0;font-size:1.55rem}.section-head p{margin:6px 0 0;color:var(--muted);font-size:.92rem}.text-link{color:var(--green2);font-weight:800}.categories{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.category{background:#fff;border:1px solid var(--line);padding:16px 10px;border-radius:12px;text-align:center;cursor:pointer;transition:.15s}.category:hover{border-color:var(--gold);transform:translateY(-2px)}.category .emoji{font-size:1.9rem;display:block;margin-bottom:8px}.category strong{font-size:.9rem}.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.card{background:white;border:1px solid var(--line);border-radius:13px;overflow:hidden;display:flex;flex-direction:column;min-width:0}.product-image{background:#eef3ee;min-height:132px;display:flex;align-items:center;justify-content:center;font-size:3.6rem;position:relative}.badge{position:absolute;top:10px;left:10px;background:#fff5d8;color:#765b0a;border-radius:5px;padding:5px 7px;font-size:.67rem;font-weight:800}.card-body{padding:13px;display:flex;flex-direction:column;flex:1}.category-label{font-size:.72rem;color:var(--green2);font-weight:800;text-transform:uppercase}.card h3{font-size:.98rem;line-height:1.35;margin:7px 0;min-height:2.55em}.price{font-weight:900;font-size:1.13rem;color:var(--green);margin:5px 0}.price-note{font-size:.7rem;color:#806b31;margin-bottom:12px}.card .btn{margin-top:auto;width:100%;padding:10px;font-size:.87rem}.cart-panel{margin-top:32px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}.cart-panel h2{margin:0 0 8px}.cart-empty{color:var(--muted);font-size:.92rem}.cart-row{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;border-bottom:1px solid var(--line);padding:12px 0}.cart-row:last-child{border-bottom:0}.cart-name{font-weight:700}.cart-sub{font-size:.82rem;color:var(--muted);margin-top:4px}.qty{display:flex;align-items:center;gap:9px}.qty button{border:1px solid var(--line);background:#f7f9f7;border-radius:6px;width:29px;height:29px;cursor:pointer;font-weight:800}.remove{border:0;background:none;color:#9b3a30;cursor:pointer;font-size:.8rem}.cart-total{display:flex;justify-content:space-between;gap:15px;border-top:1px solid var(--line);padding-top:15px;margin-top:8px;font-size:1.08rem;font-weight:900}.cart-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}.fineprint{font-size:.78rem;color:var(--muted);line-height:1.5;margin-top:12px}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}.feature{padding:17px;background:#fff;border:1px solid var(--line);border-radius:12px}.feature b{display:block;margin-bottom:6px}.feature span{color:var(--muted);font-size:.86rem;line-height:1.45}.footer{background:#083b2a;color:#e7f0e9;margin-top:36px;padding:28px 16px}.footer-inner{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}.footer p{color:#cbdcd1;max-width:520px;line-height:1.55;font-size:.88rem}.footer a{color:#f4d780;font-weight:700}.mobile-sticky{display:none}
+@media(max-width:850px){.hero{grid-template-columns:1fr}.hero-art{display:none}.products{grid-template-columns:repeat(3,minmax(0,1fr))}.categories{grid-template-columns:repeat(3,1fr)}.header{gap:12px}.brand{flex:1}.search{order:3;flex-basis:100%}}
+@media(max-width:560px){.wrap{padding:18px 12px}.header{padding:14px 12px}.brand-name{font-size:1.18rem}.tagline{font-size:.66rem}.cart-link{font-size:.88rem}.nav{padding:10px 12px;gap:17px}.hero{padding:25px 19px;border-radius:13px}.hero h1{font-size:2.2rem}.section-head h2{font-size:1.3rem}.categories{grid-template-columns:repeat(2,1fr);gap:9px}.category{padding:13px 8px}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.product-image{min-height:108px;font-size:2.8rem}.card-body{padding:10px}.card h3{font-size:.88rem}.price{font-size:1rem}.card .btn{font-size:.78rem;padding:10px 6px}.cart-row{grid-template-columns:1fr auto;gap:8px}.cart-row .qty{grid-column:1;grid-row:2}.cart-row .row-end{grid-column:2;grid-row:1 / span 2;text-align:right}.features{grid-template-columns:1fr}.cart-actions .btn{flex:1}.mobile-sticky{display:flex;position:sticky;bottom:0;z-index:10;background:#fff;border-top:1px solid var(--line);padding:9px 12px;gap:10px;justify-content:space-between;align-items:center;box-shadow:0 -5px 16px #0000000d}.mobile-sticky strong{color:var(--green)}}
+</style>
+</head>
+<body>
+<div class="topbar">Welcome to EazyGo Solution • Easy shopping, one place</div>
+<header class="header">
+  <a class="brand" href="index.html" aria-label="EazyGo Solution home"><div class="brand-name">EazyGo <span>Solution</span></div><div class="tagline">Everything You Need, All in One Place.</div></a>
+  <form class="search" id="searchForm" role="search"><input id="searchInput" type="search" placeholder="Search phones, fashion, kitchen items..." aria-label="Search products"><button type="submit">Search</button></form>
+  <a class="cart-link" href="#cart">🛒 Cart (<span id="cartCount">0</span>)</a>
+</header>
+<nav class="nav"><a href="index.html">Home</a><a href="products.html">All Products</a><a href="#categories">Categories</a><a href="#cart">Shopping Cart</a><a href="#contact">Contact</a></nav>
+<main class="wrap">
+  <section class="hero">
+    <div><div class="eyebrow">Welcome to EazyGo Solution</div><h1>Everything you need.<br>All in one place.</h1><p>Discover everyday essentials, electronics, fashion, kitchen items and more. Add items to your cart and send your order to us on WhatsApp.</p><div class="actions"><a class="btn btn-gold" href="products.html">Shop all products →</a><a class="btn btn-light" href="#categories">Browse categories</a></div></div>
+    <div class="hero-art"><div class="big">🛍️</div><strong>Shop Easy. Pay Small Small.</strong><small>Place your order directly with our team on WhatsApp.</small></div>
+  </section>
+  <div class="notice"><strong>Important price notice:</strong> All product names, images/icons and prices shown here are sample placeholders for demonstration. Prices are <strong>unconfirmed</strong> and must be checked with EazyGo Solution before purchase. This website does not take online payments; checkout sends your order details to WhatsApp.</div>
+  <section id="categories">
+    <div class="section-head"><div><h2>Shop by category</h2><p>Find what you need quickly.</p></div></div>
+    <div class="categories">
+      <button class="category" data-category="Electronics"><span class="emoji">🎧</span><strong>Electronics</strong></button>
+      <button class="category" data-category="Gas Cookers"><span class="emoji">🔥</span><strong>Gas Cookers</strong></button>
+      <button class="category" data-category="Phones"><span class="emoji">📱</span><strong>Phones</strong></button>
+      <button class="category" data-category="Laptops"><span class="emoji">💻</span><strong>Laptops</strong></button>
+      <button class="category" data-category="Fashion"><span class="emoji">👕</span><strong>Fashion</strong></button>
+      <button class="category" data-category="Shoes"><span class="emoji">👟</span><strong>Shoes</strong></button>
+      <button class="category" data-category="Bags"><span class="emoji">👜</span><strong>Bags</strong></button>
+      <button class="category" data-category="Kitchen Appliances"><span class="emoji">🍳</span><strong>Kitchen</strong></button>
+      <button class="category" data-category="Home Products"><span class="emoji">🏠</span><strong>Home products</strong></button>
+      <a class="category" href="products.html"><span class="emoji">🛍️</span><strong>View all</strong></a>
+    </div>
+  </section>
+  <section id="featured">
+    <div class="section-head"><div><h2>Featured products</h2><p>Sample products to help you get started.</p></div><a class="text-link" href="products.html">View all products →</a></div>
+    <div class="products" id="productGrid"></div>
+  </section>
+  <section id="cart" class="cart-panel">
+    <h2>🛒 Your shopping cart</h2><p class="cart-empty" id="cartEmpty">Your cart is empty. Add a product to get started.</p>
+    <div id="cartItems"></div><div class="cart-total"><span>Estimated order total</span><span id="cartTotal">₦0</span></div>
+    <div class="cart-actions"><button class="btn btn-gold" id="checkoutBtn">Send order to WhatsApp</button><button class="btn" id="clearCartBtn" style="background:#edf1ed;color:#27372e">Clear cart</button></div>
+    <p class="fineprint">No payment is collected on this website. WhatsApp checkout prepares an order message for you to send to EazyGo Solution. Sample prices are unconfirmed; confirm prices, availability, delivery fees and payment arrangements with the business before paying.</p>
+  </section>
+  <div class="features"><div class="feature"><b>🛍️ Simple shopping</b><span>Browse sample items and keep your selections in the cart.</span></div><div class="feature"><b>💬 WhatsApp ordering</b><span>Send your selected products and estimated total to our business.</span></div><div class="feature"><b>📱 Mobile friendly</b><span>Designed to work on phones, tablets and computers.</span></div></div>
+</main>
+<footer class="footer" id="contact"><div class="footer-inner"><div><div class="brand-name">EazyGo <span>Solution</span></div><p>Everything You Need, All in One Place. Shop Easy. Pay Small Small.</p></div><div><strong>Contact & orders</strong><p>WhatsApp: 09162884848<br><a href="https://wa.me/2349162884848">Chat with EazyGo Solution</a></p></div></div></footer>
+<div class="mobile-sticky"><span>Cart total: <strong id="mobileTotal">₦0</strong></span><a class="btn btn-gold" href="#cart">View cart (<span id="mobileCount">0</span>)</a></div>
+<script>
+const PRODUCTS = [
+{id:'e1',name:'Wireless Bluetooth Headphones',category:'Electronics',price:18500,emoji:'🎧'},
+{id:'g1',name:'2-Burner Tabletop Gas Cooker',category:'Gas Cookers',price:32000,emoji:'🔥'},
+{id:'p1',name:'Android Smartphone (Sample)',category:'Phones',price:145000,emoji:'📱'},
+{id:'l1',name:'Everyday Laptop (Sample)',category:'Laptops',price:385000,emoji:'💻'},
+{id:'f1',name:'Casual T-Shirt',category:'Fashion',price:7500,emoji:'👕'},
+{id:'s1',name:'Everyday Sneakers',category:'Shoes',price:18000,emoji:'👟'},
+{id:'b1',name:'Everyday Shoulder Bag',category:'Bags',price:12500,emoji:'👜'},
+{id:'k1',name:'Electric Blender',category:'Kitchen Appliances',price:28500,emoji:'🥤'},
+{id:'h1',name:'LED Rechargeable Lamp',category:'Home Products',price:9500,emoji:'💡'},
+{id:'e2',name:'Portable Bluetooth Speaker',category:'Electronics',price:22000,emoji:'🔊'},
+{id:'k2',name:'Electric Kettle',category:'Kitchen Appliances',price:14500,emoji:'🫖'},
+{id:'h2',name:'Bedsheet Set (Sample)',category:'Home Products',price:16000,emoji:'🛏️'}
+];
+const fmt=n=>'₦'+Number(n).toLocaleString('en-NG');
+let cart=JSON.parse(localStorage.getItem('eazygoCart')||'{}');
+const grid=document.getElementById('productGrid');
+function save(){localStorage.setItem('eazygoCart',JSON.stringify(cart));renderCart()}
+function card(p){return `<article class="card"><div class="product-image"><span class="badge">Sample price</span>${p.emoji}</div><div class="card-body"><div class="category-label">${p.category}</div><h3>${p.name}</h3><div class="price">${fmt(p.price)}</div><div class="price-note">UNCONFIRMED SAMPLE PRICE</div><button class="btn btn-gold" onclick="addToCart('${p.id}')">＋ Add to cart</button></div></article>`}
+function showProducts(list=PRODUCTS){grid.innerHTML=list.length?list.slice(0,8).map(card).join(''):'<p>No matching products. Try another search or browse all products.</p>'}
+function addToCart(id){cart[id]=(cart[id]||0)+1;save()}
+function changeQty(id,delta){cart[id]=(cart[id]||0)+delta;if(cart[id]<=0)delete cart[id];save()}
+function removeItem(id){delete cart[id];save()}
+function renderCart(){let entries=Object.entries(cart).filter(([id,q])=>PRODUCTS.some(p=>p.id===id)&&q>0);let count=entries.reduce((s,[id,q])=>s+q,0),total=entries.reduce((s,[id,q])=>s+PRODUCTS.find(p=>p.id===id).price*q,0);document.getElementById('cartCount').textContent=count;document.getElementById('mobileCount').textContent=count;document.getElementById('cartTotal').textContent=fmt(total);document.getElementById('mobileTotal').textContent=fmt(total);document.getElementById('cartEmpty').style.display=entries.length?'none':'block';document.getElementById('cartItems').innerHTML=entries.map(([id,q])=>{let p=PRODUCTS.find(x=>x.id===id);return `<div class="cart-row"><div><div class="cart-name">${p.emoji} ${p.name}</div><div class="cart-sub">${fmt(p.price)} each · ${fmt(p.price*q)} subtotal</div></div><div class="qty"><button aria-label="Decrease quantity" onclick="changeQty('${id}',-1)">−</button><strong>${q}</strong><button aria-label="Increase quantity" onclick="changeQty('${id}',1)">+</button></div><div class="row-end"><button class="remove" onclick="removeItem('${id}')">Remove</button></div></div>`}).join('')}
+function checkout(){let entries=Object.entries(cart).filter(([id,q])=>PRODUCTS.some(p=>p.id===id)&&q>0);if(!entries.length){alert('Your cart is empty. Add products before checking out.');return}let total=0;let lines=entries.map(([id,q])=>{let p=PRODUCTS.find(x=>x.id===id),sub=p.price*q;total+=sub;return `• ${p.name} x${q} — ${fmt(sub)} (sample price)`});let msg=`Hello EazyGo Solution! I would like to enquire about this order:\n\n${lines.join('\n')}\n\nEstimated total: ${fmt(total)}\n\nI understand these are UNCONFIRMED sample prices. Please confirm current prices, availability, delivery fee and payment instructions. Name:\nDelivery location:`;window.open('https://wa.me/2349162884848?text='+encodeURIComponent(msg),'_blank')}
+document.getElementById('checkoutBtn').addEventListener('click',checkout);document.getElementById('clearCartBtn').addEventListener('click',()=>{if(confirm('Clear all items from your cart?')){cart={};save()}});
+document.getElementById('searchForm').addEventListener('submit',e=>{e.preventDefault();let q=document.getElementById('searchInput').value.trim().toLowerCase();showProducts(PRODUCTS.filter(p=>(p.name+' '+p.category).toLowerCase().includes(q)));document.getElementById('featured').scrollIntoView({behavior:'smooth'})});
+document.querySelectorAll('[data-category]').forEach(b=>b.addEventListener('click',()=>{let c=b.dataset.category;showProducts(PRODUCTS.filter(p=>p.category===c));document.getElementById('featured').scrollIntoView({behavior:'smooth'})}));
+showProducts();renderCart();
+</script>
+</body></html>
