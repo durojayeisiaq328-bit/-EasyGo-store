@@ -45,7 +45,7 @@
 <div class="notice"><strong>Important price notice:</strong> The products and prices displayed on this demo website are sample placeholders and are <strong>not confirmed offers</strong>. Prices are not listed until confirmed with our suppliers. Contact EazyGo Solution to confirm current price, stock, warranty and delivery fee. This website does not collect online payments.</div>
 <section id="categories"><div class="heading"><div><h2>Shop by category</h2><p>Find what you need quickly.</p></div></div><div class="categories" id="categoryGrid"></div></section>
 <section id="featured"><div class="heading"><div><h2>Featured products</h2><p>Ask us for the latest supplier price and availability.</p></div><a href="products.html">View all →</a></div><div class="products" id="productGrid"></div></section>
-<section class="cart" id="cart"><h2>🛒 Your shopping cart</h2><p id="cartEmpty" class="muted">Your cart is empty. Add a product to get started.</p><div id="cartItems"></div><div class="total"><span>Price & delivery</span><span id="cartTotal">To be confirmed</span></div><div class="cart-actions"><button type="button" class="primary" id="checkoutBtn">Send enquiry on WhatsApp</button><button type="button" id="clearCartBtn" style="background:#edf2f9">Clear cart</button></div><p class="muted">No payment is collected on this website. Your WhatsApp enquiry will ask us to confirm current prices, stock, warranty and delivery fee before you pay.</p></section>
+<section class="cart" id="cart"><h2>🛒 Your shopping cart</h2><p id="cartEmpty" class="muted">Your cart is empty. Add a product to get started.</p><div id="cartItems"></div><div class="total"><span>Price & delivery</span><span id="cartTotal">To be confirmed</span></div><div class="cart-actions"><button type="button" class="primary" id="checkoutBtn">Submit order request</button><button type="button" id="clearCartBtn" style="background:#edf2f9">Clear cart</button></div><p class="muted">No payment is collected on this website. Your WhatsApp enquiry will ask us to confirm current prices, stock, warranty and delivery fee before you pay.</p></section>
 <div class="features"><div class="feature"><b>🛍️ Simple shopping</b><p>Browse categories and organise products in your cart.</p></div><div class="feature"><b>💬 WhatsApp enquiries</b><p>Contact our team to confirm your order details.</p></div><div class="feature"><b>📱 Mobile friendly</b><p>Explore EazyGo on your phone, tablet or computer.</p></div></div>
 </main><footer class="footer" id="contact"><div class="footer-inner"><div><strong>EazyGo Solution</strong><p>Shop Easy. Live Better.<br>Quality Products. Reliable Service.</p></div><div><strong>Contact & enquiries</strong><p>WhatsApp: 09162884848<br><a href="https://wa.me/2349162884848" target="_blank" rel="noopener">Chat with EazyGo Solution →</a></p></div></div></footer>
 <div class="sticky"><span>Cart: <strong id="mobileTotal">TBC</strong></span><a href="#cart">View cart (<span id="mobileCount">0</span>)</a></div>
@@ -80,7 +80,51 @@ function addToCart(id){cart[id]=(cart[id]||0)+1;save()}
 function changeQty(id,delta){cart[id]=(cart[id]||0)+delta;if(cart[id]<=0)delete cart[id];save()}
 function removeItem(id){delete cart[id];save()}
 function renderCart(){let entries=Object.entries(cart).filter(([id,q])=>PRODUCTS.some(p=>p.id===id)&&q>0);let count=entries.reduce((s,[id,q])=>s+q,0);document.getElementById('cartCount').textContent=count;document.getElementById('mobileCount').textContent=count;document.getElementById('cartTotal').textContent=count?'Confirm prices':'To be confirmed';document.getElementById('mobileTotal').textContent=count?'TBC':'TBC';document.getElementById('cartEmpty').style.display=entries.length?'none':'block';document.getElementById('cartItems').innerHTML=entries.map(([id,q])=>{let p=PRODUCTS.find(x=>x.id===id);return `<div class="cart-row"><div><b>${p.emoji} ${p.name}</b><div class="muted">Price to be confirmed · Quantity: ${q}</div></div><div class="qty"><button type="button" onclick="changeQty('${id}',-1)" aria-label="Decrease quantity">−</button><b>${q}</b><button type="button" onclick="changeQty('${id}',1)" aria-label="Increase quantity">+</button></div><button type="button" class="remove" onclick="removeItem('${id}')">Remove</button></div>`}).join('')}
-function checkout(){let entries=Object.entries(cart).filter(([id,q])=>PRODUCTS.some(p=>p.id===id)&&q>0);if(!entries.length){alert('Your cart is empty.');return}let lines=entries.map(([id,q])=>{let p=PRODUCTS.find(x=>x.id===id);return `• ${p.name} x${q} — please confirm current price`});let msg=`Hello EazyGo Solution! I would like to enquire about:\n\n${lines.join('\n')}\n\nPlease confirm current prices, availability, model/specifications, warranty, delivery fee and payment instructions before I pay.\nName:\nDelivery location:`;window.open('https://wa.me/2349162884848?text='+encodeURIComponent(msg),'_blank')}
+async function checkout(){
+  let entries = Object.entries(cart).filter(([id,q]) =>
+    PRODUCTS.some(p => p.id === id) && q > 0
+  );
+
+  if (!entries.length) {
+    alert('Your cart is empty.');
+    return;
+  }
+
+  const btn = document.getElementById('checkoutBtn');
+  btn.disabled = true;
+  btn.textContent = 'Submitting…';
+
+  const orderLines = entries.map(([id,q]) => {
+    const p = PRODUCTS.find(x => x.id === id);
+    return `${p.name} x ${q} — confirm current price`;
+  });
+
+  const formData = new FormData();
+  formData.append('_subject', 'New EazyGo order request');
+  formData.append('Products requested', orderLines.join('\n'));
+  formData.append('Order status', 'Enquiry only — not a confirmed order');
+  formData.append('Payment status', 'No payment collected');
+  formData.append('Customer instructions',
+    'Please confirm prices, stock, specifications, warranty, delivery fee and payment instructions before payment.'
+  );
+
+  try {
+    const response = await fetch('https://formspree.io/f/xkjjryvo', {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (!response.ok) throw new Error('Submission failed');
+
+    alert('Your product enquiry was submitted. EazyGo will confirm prices, availability and delivery details before payment.');
+  } catch (error) {
+    alert('We could not submit your enquiry. Please contact EazyGo on WhatsApp: 09162884848.');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Submit order request';
+  }
+}
 document.getElementById('checkoutBtn').addEventListener('click',checkout);document.getElementById('clearCartBtn').addEventListener('click',()=>{if(confirm('Clear all items?')){cart={};save()}});
 document.getElementById('searchForm').addEventListener('submit',e=>{e.preventDefault();let q=document.getElementById('searchInput').value.trim().toLowerCase();showProducts(PRODUCTS.filter(p=>(p.name+' '+p.category).toLowerCase().includes(q)));document.getElementById('featured').scrollIntoView({behavior:'smooth'})});
 document.getElementById('categoryGrid').innerHTML=CATEGORIES.map(([name,icon])=>`<button type="button" class="category" data-category="${name}"><span class="icon">${icon}</span>${name}</button>`).join('')+'<a class="category" href="products.html"><span class="icon">🛍️</span>View all products</a>';
