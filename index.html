@@ -98,8 +98,8 @@ async function checkout(){
     const p = PRODUCTS.find(x => x.id === id);
     return `${p.name} x ${q} — confirm current price`;
   });
-
-    formData.append('Customer name', prompt('Please enter your full name:') || 'Not provided');
+  const formData = new FormData();
+  formData.append('Customer name', prompt('Please enter your full name:') || 'Not provided');
   formData.append('Customer phone', prompt('Please enter your phone number:') || 'Not provided');
   formData.append('Delivery address', prompt('Please enter your delivery address:') || 'Not provided');
   formData.append('Delivery city', prompt('Please enter your city:') || 'Not provided');
