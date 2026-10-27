@@ -53,8 +53,8 @@
 const PRODUCTS=[
 {id:'e1',name:'Wireless Bluetooth Headphones',category:'Electronics',price:null,emoji:'🎧'},
 {id:'g1',name:'2-Burner Tabletop Gas Cooker',category:'Gas Cookers',price:null,emoji:'🔥'},
-{id:'p1',name:'Android Smartphone (Sample)',category:'Phones',price:null,emoji:'📱'},
-{id:'l1',name:'Everyday Laptop (Sample)',category:'Laptops',price:null,emoji:'💻'},
+{id:'p1',name:'Android Smartphone',category:'Phones',price:null,emoji:'📱'},
+{id:'l1',name:'Everyday Laptop',category:'Laptops',price:null,emoji:'💻'},
 {id:'f1',name:'Casual T-Shirt',category:'Fashion',price:null,emoji:'👕'},
 {id:'s1',name:'Everyday Sneakers',category:'Shoes',price:null,emoji:'👟'},
 {id:'b1',name:'Everyday Shoulder Bag',category:'Bags',price:null,emoji:'👜'},
@@ -62,14 +62,14 @@ const PRODUCTS=[
 {id:'h1',name:'LED Rechargeable Lamp',category:'Home Products',price:null,emoji:'💡'},
 {id:'e2',name:'Portable Bluetooth Speaker',category:'Electronics',price:null,emoji:'🔊'},
 {id:'k2',name:'Electric Kettle',category:'Kitchen Appliances',price:null,emoji:'🫖'},
-{id:'h2',name:'Bedsheet Set (Sample)',category:'Home Products',price:null,emoji:'🛏️'},
-{id:'ap1',name:'Standing Fan (Sample)',category:'Home Appliances',price:null,emoji:'🌀'},
+{id:'h2',name:'Bedsheet Set',category:'Home Products',price:null,emoji:'🛏️'},
+{id:'ap1',name:'Standing Fan',category:'Home Appliances',price:null,emoji:'🌀'},
 {id:'ap2',name:'Refrigerator',category:'Home Appliances',price:null,emoji:'❄️'},
-{id:'ap3',name:'Smart Television (Sample)',category:'Electronics',price:null,emoji:'📺'},
-{id:'ap4',name:'Washing Machine (Sample)',category:'Home Appliances',price:null,emoji:'🧺'},
-{id:'ap5',name:'Air Conditioner (Sample)',category:'Home Appliances',price:null,emoji:'❄️'},
-{id:'fur1',name:'Living Room Chair (Sample)',category:'Furniture',price:null,emoji:'🛋️'},
-{id:'beauty1',name:'Personal Care Set (Sample)',category:'Beauty',price:null,emoji:'🧴'}];
+{id:'ap3',name:'Smart Television',category:'Electronics',price:null,emoji:'📺'},
+{id:'ap4',name:'Washing Machine',category:'Home Appliances',price:null,emoji:'🧺'},
+{id:'ap5',name:'Air Conditioner',category:'Home Appliances',price:null,emoji:'❄️'},
+{id:'fur1',name:'Living Room Chair',category:'Furniture',price:null,emoji:'🛋️'},
+{id:'beauty1',name:'Personal Care Set',category:'Beauty',price:null,emoji:'🧴'}];
 const CATEGORIES=[['Phones','📱'],['Laptops','💻'],['Electronics','📺'],['Home Appliances','🌀'],['Gas Cookers','🔥'],['Kitchen Appliances','🍳'],['Furniture','🛋️'],['Fashion','👕'],['Shoes','👟'],['Bags','👜'],['Beauty','🧴'],['Home Products','🏠']];
 const fmt=n=>'₦'+Number(n).toLocaleString('en-NG');let cart={};try{cart=JSON.parse(localStorage.getItem('eazygoCart')||'{}')||{}}catch(e){cart={}}
 const grid=document.getElementById('productGrid');
