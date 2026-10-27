@@ -73,29 +73,27 @@
 </main><footer class="footer" id="contact"><div class="footer-inner"><div><strong>EazyGo Solution</strong><p>Shop Easy. Live Better.<br>Quality Products. Reliable Service.</p></div><div><strong>Contact & enquiries</strong><p>WhatsApp: 09162884848<br><a href="https://wa.me/2349162884848" target="_blank" rel="noopener">Chat with EazyGo Solution →</a></p></div></div></footer>
 <div class="sticky"><span>Cart: <strong id="mobileTotal">TBC</strong></span><a href="#cart">View cart (<span id="mobileCount">0</span>)</a></div>
 <script>
-const PRODUCTS=[
-{id:'e1',name:'Wireless Bluetooth Headphones',category:'Electronics',price:null,emoji:'🎧'},
-{id:'g1',name:'2-Burner Tabletop Gas Cooker',category:'Gas Cookers',price:null,emoji:'🔥'},
-{id:'p1',name:'Android Smartphone (Sample)',category:'Phones',price:null,emoji:'📱'},
-{id:'l1',name:'Everyday Laptop (Sample)',category:'Laptops',price:null,emoji:'💻'},
-{id:'f1',name:'Casual T-Shirt',category:'Fashion',price:null,emoji:'👕'},
-{id:'s1',name:'Everyday Sneakers',category:'Shoes',price:null,emoji:'👟'},
-{id:'b1',name:'Everyday Shoulder Bag',category:'Bags',price:null,emoji:'👜'},
-{id:'k1',name:'Electric Blender',category:'Kitchen Appliances',price:null,emoji:'🥤'},
-{id:'h1',name:'LED Rechargeable Lamp',category:'Home Products',price:null,emoji:'💡'},
-{id:'e2',name:'Portable Bluetooth Speaker',category:'Electronics',price:null,emoji:'🔊'},
-{id:'k2',name:'Electric Kettle',category:'Kitchen Appliances',price:null,emoji:'🫖'},
-{id:'h2',name:'Bedsheet Set (Sample)',category:'Home Products',price:null,emoji:'🛏️'},
-{id:'ap1',name:'Standing Fan (Sample)',category:'Home Appliances',price:null,emoji:'🌀'},
-{id:'ap2',name:'Refrigerator (Sample)',category:'Home Appliances',price:null,image:'AA22A285-34DA-45F9-B701-DAC599602523.JPEG'},
-{id:'ap3',name:'Smart Television (Sample)',category:'Electronics',price:null,emoji:'📺'},
-{id:'ap4',name:'Washing Machine (Sample)',category:'Home Appliances',price:null,emoji:'🧺'},
-{id:'ap5',name:'Air Conditioner (Sample)',category:'Home Appliances',price:null,emoji:'❄️'},
-{id:'fur1',name:'Living Room Chair (Sample)',category:'Furniture',price:null,emoji:'🛋️'},
-{id:'beauty1',name:'Personal Care Set (Sample)',category:'Beauty',price:null,emoji:'🧴'}];
-const CATEGORIES=[['Phones','📱'],['Laptops','💻'],['Electronics','📺'],['Home Appliances','🌀'],['Gas Cookers','🔥'],['Kitchen Appliances','🍳'],['Furniture','🛋️'],['Fashion','👕'],['Shoes','👟'],['Bags','👜'],['Beauty','🧴'],['Home Products','🏠']];
-const fmt=n=>'₦'+Number(n).toLocaleString('en-NG');let cart={};try{cart=JSON.parse(localStorage.getItem('eazygoCart')||'{}')||{}}catch(e){cart={}}
-const grid=document.getElementById('productGrid');
+const aliases = {
+  tv: 'television smart television',
+  television: 'tv smart television',
+  fridge: 'refrigerator fridge freezer',
+  refrigerator: 'fridge freezer',
+  phone: 'smartphone mobile phones',
+  smartphone: 'phone mobile',
+  fan: 'standing fan',
+  cooker: 'gas cooker gas cookers',
+  laptop: 'computer',
+  shoe: 'shoes sneakers',
+  bag: 'bags handbag',
+  ac: 'air conditioner air conditioning',
+  freezer: 'fridge refrigerator'
+};
+const matches = PRODUCTS.filter(p => {
+  const text = (p.name + ' ' + p.category).toLowerCase();
+  const words = (aliases[q] || '') + ' ' + text;
+  return text.includes(q) || words.includes(q);
+});
+showProducts(matches);
 function save(){try{localStorage.setItem('eazygoCart',JSON.stringify(cart))}catch(e){}renderCart()}
 function card(p){return `<article class="card"><div class="picture"><span class="badge">Price on request</span>${p.image?`<img src="${p.image}" alt="${p.name}" style="width:100%;height:180px;object-fit:contain;">`:`<span aria-hidden="true">${p.emoji}</span>`}</div><div class="card-body"><div class="label">${p.category}</div><h3>${p.name}</h3><div class="price">Contact us for latest price</div><div class="small">Price and availability confirmed before payment</div><button type="button" onclick="addToCart('${p.id}')">＋ Add to cart</button></div></article>`}
 function showProducts(list=PRODUCTS){grid.innerHTML=list.length?list.map(card).join(''):'<p>No matching products. Try another search.</p>'}
