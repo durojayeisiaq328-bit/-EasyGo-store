@@ -90,8 +90,8 @@ tv: 'smart television television tv',
 };
 const matches = PRODUCTS.filter(p => {
   const text = (p.name + ' ' + p.category).toLowerCase();
-  const words = (aliases[q] || '') + ' ' + text;
-  return text.includes(q) || words.includes(q);
+  return text.includes(q) || (aliases[q] && text.split(' ').some(word => aliases[q].includes(word)));
+});
 });
 showProducts(matches);
 function save(){try{localStorage.setItem('eazygoCart',JSON.stringify(cart))}catch(e){}renderCart()}
