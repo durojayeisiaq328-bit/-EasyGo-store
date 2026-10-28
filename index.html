@@ -6,7 +6,66 @@
 <meta name="theme-color" content="#1249a3">
 <meta name="description" content="EazyGo Solution — browse electronics, home essentials, fashion and more. Confirm prices and availability before ordering.">
 <title>EazyGo Solution | Shop Easy. Live Better.</title>
-<style>
+<style> 
+/* EazyGo refreshed Amazon-inspired design */
+:root {
+  --eazygo-navy: #131921;
+  --eazygo-orange: #ff9900;
+  --eazygo-blue: #232f3e;
+}
+
+body {
+  background: #eaeded;
+  color: #17212b;
+}
+
+header, .header, .site-header {
+  background-color: var(--eazygo-navy);
+}
+
+button, .button, .btn {
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.card .price {
+  color: #b12704;
+  font-weight: 700;
+}
+
+.card button {
+  background: var(--eazygo-orange);
+  color: #17212b;
+  border: 1px solid #e68a00;
+  padding: 10px 14px;
+}
+
+.card button:hover {
+  background: #f3a847;
+}
+
+input, select, textarea {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+img {
+  max-width: 100%;
+}
+
 :root{--blue:#1249a3;--deep:#0a2a61;--orange:#ff861c;--ink:#18243b;--muted:#64748b;--line:#e2e8f0;--bg:#f5f7fb}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Arial,sans-serif}a{color:inherit;text-decoration:none}button,input{font:inherit}button{cursor:pointer}
 .top{background:var(--deep);color:white;text-align:center;padding:9px;font-size:13px}.header{
