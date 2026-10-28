@@ -27,7 +27,19 @@
     .section-title{margin:0 0 5px;font-size:1.6rem}
     .sub{margin:0 0 18px;color:var(--muted)}
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-    .card{background:#fff;border:1px solid #e4eaf2;border-radius:16px;overflow:hidden;box-shadow:0 5px 18px rgba(19,43,76,.06)}
+ .product-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(19, 43, 76, 0.07);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.product-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 8px 22px rgba(19, 43, 76, 0.12);
+}
 .product-visual {
   min-height: 260px;
   display: flex;
