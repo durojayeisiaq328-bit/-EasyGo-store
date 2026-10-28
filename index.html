@@ -192,7 +192,28 @@ async function checkout(){
   }
 }
 document.getElementById('checkoutBtn').addEventListener('click',checkout);document.getElementById('clearCartBtn').addEventListener('click',()=>{if(confirm('Clear all items?')){cart={};save()}});
-document.getElementById('searchForm').addEventListener('submit',e=>{e.preventDefault();let q=document.getElementById('searchInput').value.trim().toLowerCase();showProducts(PRODUCTS.filter(p=>(p.name+' '+p.category).toLowerCase().includes(q)));document.getElementById('featured').scrollIntoView({behavior:'smooth'})});
+document.getElementById('searchForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  let q=document.getElementById('searchInput').value.trim().toLowerCase();
+
+  const synonyms = {
+    'tv':'television',
+    'fridge':'refrigerator',
+    'mobile':'phone',
+    'cellphone':'phone',
+    'fan':'standing fan',
+    'ac':'air conditioner'
+  };
+
+  const term = synonyms[q] || q;
+
+  showProducts(PRODUCTS.filter(p =>
+    (p.name+' '+p.category).toLowerCase().includes(q) ||
+    (p.name+' '+p.category).toLowerCase().includes(term)
+  ));
+
+  document.getElementById('featured').scrollIntoView({behavior:'smooth'});
+});
 document.getElementById('categoryGrid').innerHTML=CATEGORIES.map(([name,icon])=>`<button type="button" class="category" data-category="${name}"><span class="icon">${icon}</span>${name}</button>`).join('')+'<a class="category" href="products.html"><span class="icon">🛍️</span>View all products</a>';
 document.querySelectorAll('[data-category]').forEach(b=>b.addEventListener('click',()=>{showProducts(PRODUCTS.filter(p=>p.category===b.dataset.category));document.getElementById('featured').scrollIntoView({behavior:'smooth'})}));
 const slides=[{eyebrow:'Welcome to EazyGo Solution',title:'Shop Easy.<br>Live Better.',text:'Explore electronics, home essentials, fashion and more—all in one convenient place.',art:'🛍️📱'},{eyebrow:'Electronics & appliances',title:'Upgrade your<br>everyday life.',text:'Discover phones, laptops, TVs, fans and appliances for your home.',art:'📺❄️'},{eyebrow:'Your shopping destination',title:'More choice.<br>Less hassle.',text:'Browse your favourites and send an enquiry to confirm prices and availability.',art:'🛋️👟'}];
