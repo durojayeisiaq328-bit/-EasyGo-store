@@ -251,7 +251,44 @@ color:white;
 .cart{box-shadow:0 5px 18px #0c367008}.feature{box-shadow:0 3px 12px #0c367008}.feature b{font-size:15px}
 .footer{background:linear-gradient(115deg,#071d46,#0a2a61)}
 @media(max-width:570px){.hero{border-radius:18px;min-height:260px}.hero:after{width:130px;height:130px;right:-25px}.hero h1{letter-spacing:-.8px}.category{min-height:100px;padding:15px 8px}.picture{min-height:120px}.card h3{font-size:13px}.card-body{padding:11px}}
+/* EazyGo improved navigation menu */
+.nav {
+  background: #232f3e;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 20px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
 
+.nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  padding: 8px 10px;
+  border-radius: 5px;
+}
+
+.nav a:hover,
+.nav a:focus-visible {
+  background: #37475a;
+  color: #ff9900;
+}
+
+@media (max-width: 600px) {
+  .nav {
+    gap: 8px;
+    padding: 10px 12px;
+  }
+
+  .nav a {
+    font-size: 13px;
+    padding: 8px;
+  }
+}
 </style>
 </head><body>
 <div class="top">💙 Welcome to EazyGo Solution • Shop Easy. Live Better.</div>
